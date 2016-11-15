@@ -43,11 +43,11 @@ public class DownloadTask extends AsyncTask<URL,Void,String > {
                     try {
                         InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                         Reader reader = new InputStreamReader(in, "UTF-8");
-                        char[] buffer = new char[1000000];
+                        char[] buffer = new char[38226];
                         reader.read(buffer);
                         String data = new String(buffer);
                         Log.v(TAG, data);
-                        return data.substring(0,1000);
+                        return data;
                     } finally {
                         urlConnection.disconnect();
                     }
